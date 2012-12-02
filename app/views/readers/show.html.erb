@@ -1,0 +1,26 @@
+<% provide(:title, @reader.name) %>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @reader.name %>
+      </h1>
+    </section>
+    <section>
+      <ul>
+        <li><%= @reader.employee_id %></li>
+      </ul>
+    </section>
+    <section>
+      <div class="btn-group">
+        <%= link_to "edit", edit_reader_path(@reader), class: "span1 btn btn-primary" %>
+        <%= link_to "delete", @reader, method: :delete,
+                    data: {confirm: "You sure?"}, class: "span1 btn btn-danger" %>
+      </div>
+    </section>
+  </aside>
+  <div class="span8">
+    Borrowing Record will be Here...
+  </div>
+</div>

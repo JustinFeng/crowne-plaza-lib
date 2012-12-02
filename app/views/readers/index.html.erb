@@ -1,0 +1,22 @@
+<% provide(:title, 'All readers') %>
+<h1>All readers</h1>
+
+<%= link_to "Register New Reader", new_reader_path,
+            class: "btn btn-large btn-primary" %>
+
+<%= will_paginate %>
+
+<table class="table-bordered table-striped">
+  <thead>
+  <tr>
+    <th class="span4">Reader</th>
+    <th class="span4">Employee ID</th>
+    <th class="span4">Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @readers %>
+  </tbody>
+</table>
+
+<%= will_paginate %>

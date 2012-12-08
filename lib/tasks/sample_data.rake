@@ -1,7 +1,11 @@
 namespace :db do
+  desc "Create admin account"
+  task init_admin: :environment do
+    make_users
+  end
+
   desc "Fill database with initial data"
   task populate: :environment do
-    make_users
     make_books
     make_readers
     make_borrowing_records

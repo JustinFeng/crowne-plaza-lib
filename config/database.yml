@@ -23,5 +23,5 @@ production:
   encoding: utf8
   database: crowne_plaza_lib
   username: root
-  password:
+  password: Fj840227.
   socket: /var/lib/mysql/mysql.sock

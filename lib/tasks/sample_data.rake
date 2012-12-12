@@ -1,21 +1,10 @@
 namespace :db do
-  desc "Create admin account"
-  task init_admin: :environment do
-    make_users
-  end
-
   desc "Fill database with initial data"
   task populate: :environment do
     make_books
     make_readers
     make_borrowing_records
   end
-end
-
-def make_users
-  admin = User.create!(name: "michellecai",
-                       password: "cb560921",)
-  admin.toggle!(:admin)
 end
 
 def make_books

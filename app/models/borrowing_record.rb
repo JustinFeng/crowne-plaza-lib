@@ -11,7 +11,7 @@ class BorrowingRecord < ActiveRecord::Base
 
   private
 
-  def self.from_current_not_returned
+  def self.all_currently_borrowed_record
     where("current = :current_status", current_status: true)
   end
 end

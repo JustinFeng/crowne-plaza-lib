@@ -2,7 +2,7 @@ class ReadersController < ApplicationController
   before_filter :signed_in?
 
   def index
-    @readers = Reader.paginate(page: params[:page])
+    @readers = Reader.paginate(page: params[:page], per_page: 10)
   end
 
   def destroy

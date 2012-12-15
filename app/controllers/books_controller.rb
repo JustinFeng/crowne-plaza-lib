@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   before_filter :signed_in?
 
   def index
-    @books = Book.paginate(page: params[:page])
+    @books = Book.paginate(page: params[:page], per_page: 10)
   end
 
   def destroy

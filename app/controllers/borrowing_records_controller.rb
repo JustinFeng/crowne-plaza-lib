@@ -15,6 +15,6 @@ class BorrowingRecordsController < ApplicationController
   def update
     BorrowingRecord.find(params[:id]).toggle!(:current)
     flash[:success] = "Book returned successfully!"
-    redirect_to root_path
+    redirect_to :back
   end
 end

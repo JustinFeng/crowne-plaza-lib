@@ -1,0 +1,19 @@
+<% if @borrowing_records.any? %>
+    <% @book_page = true %>
+    <%= will_paginate @borrowing_records %>
+
+    <table class="table-bordered table-striped">
+      <thead>
+      <tr>
+        <th class="span3">Reader</th>
+        <th class="span3">Borrow Time</th>
+        <th class="span3">Return Time</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render @borrowing_records %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @borrowing_records %>
+<% end %>

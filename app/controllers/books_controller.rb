@@ -19,6 +19,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    @borrowing_records = @book.borrowing_records.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new

@@ -19,7 +19,7 @@ class ReadersController < ApplicationController
 
   def show
     @reader = Reader.find(params[:id])
-    @borrowing_records = @reader.borrowing_records.paginate(page: params[:page], per_page: 10)
+    @borrowing_records = @reader.borrowing_records.order("created_at DESC").paginate(page: params[:page], per_page: 10)
   end
 
   def new

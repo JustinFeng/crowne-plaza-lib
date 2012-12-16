@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @borrowing_records = BorrowingRecord.all_currently_borrowed_record.paginate(page: params[:page], per_page: 10)
+    @borrowing_records = BorrowingRecord.all_currently_borrowed_record.order("created_at ASC").paginate(page: params[:page], per_page: 10)
   end
 
   def help
